@@ -108,21 +108,24 @@ export default function Homepage() {
           alt="Sunset in the mountains"
         />
         <div class="px-6 py-4 text-center absolute top-20 left-20 bg-slate-50/75">
-          <div class="font-bold text-xl mb-2 mt-10">Welcome Rocker!</div>
-          <p class="text-gray-700 text-base p-20">
-            In this website you can easily find where is the closest Rock Bar,
-            Rock pub, Rock Restaurant, Concert halls and CoffeeShops near you!
-          </p>
+          <div class="font-bold text-xl mb-2 mt-10"><h1>Welcome Rocker!</h1></div>
+          <div class="text-gray-700 text-base p-10">
           <p>
+            <h4>In this website you can easily find where is the closest Rock Bar,
+            Rock pub, Rock Restaurant, Concert halls and CoffeeShops near you!</h4>
+          </p>
+          <p><h4>
             You can also create a blog and post your photos and opinion about
             the places you have visited and you can also check other user`s
-            posts.
+            posts.</h4>
           </p>
+          </div>
+          <button>Click Here to Start</button>
         </div>
       </div>
       <div className="container h-screen flex align-center items-top flex-column">
         <div ref={ref}>
-          <div className="flex align-center justify-center">
+          <div className="flex align-center justify-around">
             <input
               type="text"
               className="h-14 w-96 mt-4 pl-10 pr-20 rounded-lg z-0 focus:shadow bg-gray-200 focus:outline-none"

@@ -38,6 +38,9 @@ export default function BlogDetail() {
                     src={eachimg.ImageUrl}
                     alt={blogdetail.title}
                   />
+                  <div>
+                    <img src={blogdetail.mainImageUrl} alt="" />
+                  </div>
                 </div>
                 // </Carousel.Item>
               );
