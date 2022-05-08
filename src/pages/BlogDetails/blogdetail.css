@@ -1,0 +1,13 @@
+
+.img-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 20px;
+  justify-content: space-around;
+}
+
+.img-size {
+  height: auto;
+  width: 500px;
+}

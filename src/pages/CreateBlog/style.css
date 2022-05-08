@@ -1,0 +1,11 @@
+.imgdimension {
+    height : 80px;
+    width: 80px;
+}
+.imagecontainer {
+    width:280px; 
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
