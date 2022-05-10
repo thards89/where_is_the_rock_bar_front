@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchBlogDetails } from "../../store/blog/actions";
 import { selectBlogDetail } from "../../store/blog/selector";
 import { useParams } from "react-router-dom";
-import { Carousel } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 import "../BlogDetails/blogdetail.css";
 
 export default function BlogDetail() {
@@ -25,11 +25,15 @@ export default function BlogDetail() {
       </div>
 
       <div className="img-container">
+      {!blogdetail
+          ? "Loading" :
+        <div>
+          <img className="img-size" src={blogdetail.mainImageUrl} alt="" />
+        </div>}
         {!blogdetail
           ? "Loading"
           : blogdetail.moreImages?.length > 0
-          ? // <Carousel fade >
-            blogdetail.moreImages.map((eachimg) => {
+          ? blogdetail.moreImages.map((eachimg) => {
               return (
                 // <Carousel.Item className="item" key={eachimg.id}>
                 <div className="img-container">
@@ -38,16 +42,12 @@ export default function BlogDetail() {
                     src={eachimg.ImageUrl}
                     alt={blogdetail.title}
                   />
-                  <div>
-                    <img src={blogdetail.mainImageUrl} alt="" />
-                  </div>
                 </div>
-                // </Carousel.Item>
               );
             })
-          : // </Carousel>
-            "No images uploaded."}
+          :  null}
       </div>
+      <NavLink className="returnButton" to="/blogs">Return</NavLink>
     </div>
   );
 }

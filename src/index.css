@@ -18,3 +18,80 @@ width: 500px;
 height: 500px;
 
 }
+
+.fontTitle {
+    font-family: 'RocknRoll One', sans-serif;
+}
+
+.fontText {
+    font-family: 'Montserrat', sans-serif;
+ 
+}
+
+.navIcon {
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.containerSearchPage {
+    background-color: rgb(241 245 249);
+
+}
+
+.titleSearchPage {
+    font-family: 'RocknRoll One', sans-serif;
+    font-size: 30px;
+    text-align: center;
+    padding-top: 60px;
+
+}
+
+.rangeText {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    text-align: center;
+}
+
+.searchBar{
+    width: 50px;
+    height: 20px;
+    padding: 10px;
+}
+
+.ratingText {
+    font-size: 11px;
+    margin-top: 3px;
+    margin-bottom: 20px;
+
+}
+
+.blogsPageTitle {
+    font-family: 'RocknRoll One', sans-serif;
+    font-size: 35px;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.titleCreateBlog {   
+    font-family: 'RocknRoll One', sans-serif;
+    font-size: 30px;
+    text-align: center;
+    padding-top: 30px;
+    margin-bottom: 2px;
+}
+
+.returnButton {
+    display: flex;
+    margin:auto;
+    background-color: black;
+    color: white;
+    justify-content: center;
+    text-align: center;
+    border: 1 2 black;
+    text-decoration: none;
+    width: 100px;
+    border-radius: 10px;
+    padding: 8px;
+    margin-top: 10px;
+
+}

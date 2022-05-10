@@ -38,12 +38,9 @@ export default function ViewBlogs() {
   return (
     <div>
       <div className="container h-screen flex align-center items-top flex-column">
-        {/* <div className="absolute top-4 left-3 ">
-            {" "}
-            <i className="fa fa-search text-gray-400 z-20 hover:text-gray-500"></i>{" "}
-          </div>{" "} */}
-        <div>
-          <div className="flex align-center justify-center mt-10">
+         <div>
+          <div><p className="blogsPageTitle">Blogs</p></div>
+          <div className="flex align-center justify-center mt-0">
             <input
               type="search"
               className="h-14 w-96 mt-4 pl-10 pr-20 rounded-lg z-0 focus:shadow bg-gray-200 focus:outline-none "
@@ -52,12 +49,6 @@ export default function ViewBlogs() {
               onChange={(event) => setSearchTerm(event.target.value)}
             />
 
-            {/* <button
-              onClick={console.log("clicked")}
-              className="h-10 w-20 mt-4 text-white rounded-lg bg-blue-500 hover:bg-blue-600 ml-10"
-            >
-              Search
-            </button> */}
           </div>
         </div>
         <div className="flex flex-row justify-center flex-wrap mt-10 rounded gap-5">

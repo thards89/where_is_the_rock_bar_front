@@ -15,7 +15,9 @@ import LoggedIn from "./LoggedIn";
 import LoggedOut from "./LoggedOut";
 import { useNavigate } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import {GoGlobe} from 'react-icons/go'
+import {GiMusicalNotes} from 'react-icons/gi'
+
+
 
 const themeTitle = createTheme({
   typography: {
@@ -68,7 +70,7 @@ const ResponsiveAppBar = () => {
               component="div"
               sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
             >
-             Where is The Rock Bar?
+             Where is The Rock Bar?<GiMusicalNotes className="navIcon"/>
             </Typography>
           </ThemeProvider>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -124,7 +126,7 @@ const ResponsiveAppBar = () => {
                 display: { xs: "flex", md: "none" },
               }}
             >
-            What`s NearBy{''}{''}<GoGlobe/>
+            Where is the Rock Bar{''}{''}
             </Typography>
           </ThemeProvider>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
@@ -132,21 +134,21 @@ const ResponsiveAppBar = () => {
               onClick={navigateHomePage}
               sx={{ my: 2, color: "white", display: "block" }}
             >
-              Home
+             <b> Home</b>
             </Button>
          
               <Button
                 onClick={navigateSeeBlogs}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
-                Blogs
+                <b>Blogs</b>
               </Button>
               {token ? 
               <Button
                 onClick={navigateREgisterBlog}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
-                Create a Blog
+                <b>Create a Blog</b>
               </Button>
           : null }
           </Box>

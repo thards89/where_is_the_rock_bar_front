@@ -8,6 +8,11 @@ import { dataHomepage } from "../../store/home/actions";
 import { useState } from "react";
 import { selectHomeData } from "../../store/home/selector";
 import { Slider } from "@mui/material";
+import { AiFillStar } from "react-icons/ai";
+import FormGroup from "@mui/material/FormGroup";
+import Box from "@mui/material/Box";
+import Rating from "@mui/material/Rating";
+import Typography from "@mui/material/Typography";
 
 export default function Homepage() {
   const homeData = useSelector(selectHomeData);
@@ -101,56 +106,78 @@ export default function Homepage() {
 
   return (
     <div>
-      <div class="rounded overflow-hidden shadow-sm w-500  mb-20 relative">
+      <div class="rounded overflow-hidden shadow-sm w-500  mb-2 relative">
         <img
           class="w-screen h-200px grayscale"
           src="https://images.pexels.com/photos/325811/pexels-photo-325811.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
           alt="Sunset in the mountains"
         />
-        <div class="px-6 py-4 text-center absolute top-20 left-20 bg-slate-50/75">
-          <div class="font-bold text-xl mb-2 mt-10"><h1>Welcome Rocker!</h1></div>
-          <div class="text-gray-700 text-base p-10">
-          <p>
-            <h4>In this website you can easily find where is the closest Rock Bar,
-            Rock pub, Rock Restaurant, Concert halls and CoffeeShops near you!</h4>
-          </p>
-          <p><h4>
-            You can also create a blog and post your photos and opinion about
-            the places you have visited and you can also check other user`s
-            posts.</h4>
-          </p>
+        <div class="px-6 py-4 text-center absolute top-20 left-20 right-20 bg-slate-50/75">
+          <div class="font-bold text-xl mb-2 mt-10">
+            <h1 className="fontTitle">Welcome Rocker!</h1>
           </div>
-          <button>Click Here to Start</button>
+          <div class="text-gray-700 text-base p-10">
+            <p>
+              <h4 class="leading-loose fontText">
+                In this website you can easily find where is the closest Rock
+                Bar, Metal Bar, Irish Pub, Rock Restaurant, Music Venue and
+                CoffeeShops near you!
+              </h4>
+            </p>
+            <p>
+              <h4 class="leading-loose fontText">
+                You can also create a blog and post your photos and opinion
+                about the places you have visited and you can also check other
+                user`s posts.
+              </h4>
+            </p>
+          </div>
+          <button
+            className="bg-slate-200 hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-slate-300 rounded shadow"
+            onClick={(e) => {
+              e.preventDefault();
+              window.location.replace("/#search");
+            }}
+          >
+            <b>Click Here to Start</b>
+          </button>
         </div>
       </div>
-      <div className="container h-screen flex align-center items-top flex-column">
-        <div ref={ref}>
-          <div className="flex align-center justify-around">
-            <input
-              type="text"
-              className="h-14 w-96 mt-4 pl-10 pr-20 rounded-lg z-0 focus:shadow bg-gray-200 focus:outline-none"
-              placeholder="Write here the name of your city"
-              value={value}
-              onChange={handleInput}
-              disabled={!ready}
-            />
-            <div className="flex align-center justify-center flex-column mr-5 ml-5">
-              <div className="w-20">
-                <Slider
-                  defaultValue={5}
-                  min={1}
-                  max={30}
-                  aria-label="Small"
-                  valueLabelDisplay="auto"
-                  onChange={(e) => setRange(e.target.value * 1000)}
-                />
-              </div>
-              <div>Range in KM</div>
-            </div>
 
-            <div class="mb-3 xl:w-60 mt-4 ">
-              <select
-                class="form-select appearance-none
+      {/* search */}
+      <div className="containerSearchPage">
+        <div className="titleSearchPage" id="search">
+          Where is the Rock Bar?
+        </div>
+        <div className="container h-screen flex align-center items-top flex-column bg-slate-100 ">
+          <div ref={ref}>
+            <div className="flex align-center justify-around mt-10 gap-3">
+              <input
+                type="text"
+                className=" form-control
+          block
+           mt-3
+          p-4
+          text-sm
+          font-normal
+          text-gray-700
+          bg-white bg-clip-padding
+          border border-solid border-gray-300
+          rounded
+          transition
+          ease-in-out
+          m-0
+          focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+          searchBar"
+                placeholder="Write here the name of your city"
+                value={value}
+                onChange={handleInput}
+                disabled={!ready}
+              />
+              <div class="mb-3 xl:w-60 mt-4 ">
+                <select
+                  class="form-select form-select-sm
+                appearance-none
       block
       w-20
       px-3
@@ -163,85 +190,107 @@ export default function Homepage() {
       rounded
       transition
       ease-in-out
-     
-      m-0
       focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                aria-label="Default select example"
-                onChange={(e) => setType(e.target.value)}
+                  aria-label="Default select example"
+                  onChange={(e) => setType(e.target.value)}
+                >
+                  <option selected>Type of place</option>
+                  <option value="Rockbar">Rock Bar</option>
+                  <option value="Metal bar">Metal Bar</option>
+                  <option value="Irish Pub">Irish Pub</option>
+                  <option value="Rock Restaurant">Rock Restaurant</option>
+                  <option value="Music Venue">Music Venue</option>
+                  <option value="Coffeeshop">Coffeeshop</option>
+                </select>
+              </div>
+              <div className="flex align-center justify-center flex-column mr-5 ml-5">
+                <div className="w-20 mt-2">
+                  <Slider
+                    defaultValue={5}
+                    min={1}
+                    max={30}
+                    aria-label="Small"
+                    valueLabelDisplay="auto"
+                    onChange={(e) => setRange(e.target.value * 1000)}
+                  />
+                </div>
+                <div className="rangeText">Range in KM</div>
+              </div>
+              <button
+                onClick={sumbitSearch}
+                className="h-10 w-20 text-white rounded-lg bg-slate-900 hover:bg-slate-500 mt-4 pt-2 pb-2 pr-2 pl-2 justify-center"
               >
-                <option selected>Type of place</option>
-                <option value="Rockbar">Rock Bar</option>
-                <option value="Metal bar">Metal Bar</option>
-                <option value="Irish Pub">Irish Pub</option>
-                <option value="Rock Restaurant">Rock Restaurant</option>
-                <option value="Music Venue">Music Venue</option>
-                <option value="Coffeeshop">Coffeeshop</option>
-              </select>
+                Search
+              </button>
             </div>
-            <button
-              onClick={sumbitSearch}
-              className="h-10 w-20 mt-4 text-white rounded-lg bg-blue-500 hover:bg-blue-600 ml-10"
-            >
-              Search
-            </button>
+
+            {/* search results */}
+            <div className="flex align-center ">
+              {status === "OK" && <ul>{renderSuggestions()}</ul>}
+            </div>
           </div>
-          <div className="flex align-center justify-center">
-            {status === "OK" && <ul>{renderSuggestions()}</ul>}
-          </div>
-        </div>
 
-        <div>
-          <div className="flex flex-row justify-center flex-wrap mt-10 rounded">
-            {homeData
-              ? homeData.map((data) => {
-                  return (
-                    <div className="flex m-3">
-                      <div className="flex flex-col w-96 h-96 max-w-7xl rounded-lg bg-white shadow-lg">
-                        {data.photos?.length ? (
-                          data.photos.map((photos) => {
-                            return (
-                              <img
-                                className=" w-full h-96 md:h-44 object-cover md:w-full rounded-t-lg md:rounded-none md:rounded-l-lg"
-                                src={`https://maps.googleapis.com/maps/api/place/photo?photo_reference=${photos.photo_reference}&maxwidth=300&key=AIzaSyDGnhMSdxZWn2pTKvaimAKqZif3PqA7LwY`}
-                                alt=""
-                              />
-                            );
-                          })
-                        ) : (
-                          <img
-                            className=" w-full h-96 md:h-44 object-cover md:w-full rounded-t-lg md:rounded-none md:rounded-l-lg "
-                            src="https://thumbs.dreamstime.com/b/no-image-available-icon-flat-vector-no-image-available-icon-flat-vector-illustration-132482953.jpg"
-                            alt=""
-                          />
-                        )}
+          <div>
+            <div className="flex flex-row justify-center flex-wrap mt-10 rounded gap-5">
+              {homeData
+                ? homeData.map((data) => {
+                    return (
+                      <div className="flex m-3">
+                        <div className="flex flex-col w-96 h-96 max-w-7xl rounded-lg bg-white shadow-lg">
+                          {data.photos?.length ? (
+                            data.photos.map((photos) => {
+                              return (
+                                <img
+                                  className=" w-full h-96 md:h-44 object-cover md:w-full rounded-t-lg md:rounded-none md:rounded-l-lg"
+                                  src={`https://maps.googleapis.com/maps/api/place/photo?photo_reference=${photos.photo_reference}&maxwidth=300&key=AIzaSyDGnhMSdxZWn2pTKvaimAKqZif3PqA7LwY`}
+                                  alt=""
+                                />
+                              );
+                            })
+                          ) : (
+                            <img
+                              className=" w-full h-96 md:h-44 object-cover md:w-full rounded-t-lg md:rounded-none md:rounded-l-lg "
+                              src="https://thumbs.dreamstime.com/b/no-image-available-icon-flat-vector-no-image-available-icon-flat-vector-illustration-132482953.jpg"
+                              alt=""
+                            />
+                          )}
 
-                        <div className="p-6 flex flex-col justify-start">
-                          <h5 className="text-gray-900 text-xl font-medium mb-2">
-                            {data.name}
-                          </h5>
+                          <div className="p-6 flex flex-col justify-start">
+                            <h5 className="text-gray-900 text-xl font-medium mb-2">
+                              {data.name}
+                            </h5>
 
-                          <p className="text-gray-700 text-base mb-4">
-                            Adress: {data.vicinity}
-                          </p>
-                          <div>
-                            {data.rating && (
-                              <p className="text-gray-600 text-xs">
-                                {ratingToStars(data.rating)}({data.rating}/5)
-                                Out of {data.user_ratings_total} users
-                              </p>
-                            )}
-                            <p className="m-0">
-                              {data.opening_hours?.open_now
-                                ? "Open now!"
-                                : "Closed..."}
+                            <div>
+                              <FormGroup>
+                                <Box sx={{ "& > legend": { mt: 2 } }}>
+                                  <Rating
+                                    readOnly
+                                    precision={0.5}
+                                    name="read-only"
+                                    value={data.rating}
+                                  />
+                                </Box>
+                              </FormGroup>
+                              <div className="ratingText"><b>{data.rating}/5 stars of {''}{''}
+                                  {data.user_ratings_total} users </b></div>
+
+                                  <p className="text-gray-700 text-base mb-2">
+                              <b>Adress:</b> {data.vicinity}
                             </p>
+
+                              <p className="m-0 text-center">
+                                {data.opening_hours?.open_now
+                                  ? "Open now!"
+                                  : "Closed"}
+                              </p>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  );
-                })
-              : ""}
+                    );
+                  })
+                : ""}
+            </div>
           </div>
         </div>
       </div>

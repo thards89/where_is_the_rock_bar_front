@@ -1,7 +1,8 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Form, Col, Row, Button } from "react-bootstrap";
 import { createBlog } from "../../store/blog/actions";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 import { useSelector } from "react-redux";
 import { selectUser } from "../../store/user/selectors";
@@ -17,7 +18,14 @@ export default function CreateBlog() {
   const [visitedOn, setvisitedOn] = useState();
   const urls = [];
   const [images, setImages] = useState(urls);
-  // const [loading,setLoading] = useState(false);
+  
+  
+  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const navigate = useNavigate();
+  const navigateBlogs = () => {
+    setAnchorElNav(navigate("/blogs"));
+  };
+
   function handleSubmit(event) {
     event.preventDefault();
     const userId = user.id;
@@ -30,7 +38,7 @@ export default function CreateBlog() {
     setLocation("");
     setPlace("");
     setvisitedOn("dd-mm-jjjj");
-    
+    navigateBlogs()    
   }
   const uploadImage = async (e) => {
     const files = e.target.files;
@@ -54,14 +62,20 @@ export default function CreateBlog() {
     setImages(urls);
   };
   return (
+    <div>
+            <p className="titleCreateBlog">Create a Blog</p>
+    
     <div
       style={{
-        marginTop: "70px",
+        marginTop: "20px",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        fontFamily:"Inter"
+        
       }}
     >
+
       <Form>
         <Form.Group
           as={Row}
@@ -69,9 +83,9 @@ export default function CreateBlog() {
           controlId="exampleForm.ControlInput1"
         >
           <Form.Label column sm={3}>
-            Title:
+            Title of the Blog:
           </Form.Label>
-          <Col sm={8}>
+          <Col sm={12}>
             <Form.Control
               type="text"
               placeholder="Enter title"
@@ -102,8 +116,8 @@ export default function CreateBlog() {
           className="mb-3"
           controlId="exampleForm.ControlInput2"
         >
-          <Form.Label column sm={4}>
-            Location
+          <Form.Label column sm={2}>
+            City
           </Form.Label>
           <Col sm={8}>
             <Form.Control
@@ -119,7 +133,7 @@ export default function CreateBlog() {
           className="mb-3"
           controlId="exampleForm.ControlInput6"
         >
-          <Form.Label column sm={4}>
+          <Form.Label column sm={2}>
             Place
           </Form.Label>
           <Col sm={8}>
@@ -136,7 +150,7 @@ export default function CreateBlog() {
           className="mb-3"
           controlId="exampleForm.ControlInput3"
         >
-          <Form.Label column sm={4}>
+          <Form.Label column sm={2}>
             Visited On
           </Form.Label>
           <Col sm={8}>
@@ -149,10 +163,10 @@ export default function CreateBlog() {
         </Form.Group>
 
         <Form.Group as={Row} controlId="formFile" className="mb-3">
-          <Form.Label column sm={4}>
+          <Form.Label column sm={2}>
             Upload Pictures
           </Form.Label>
-          <Col sm={4}>
+          <Col sm={5}>
             <Form.Control type="file"
               multiple
               onClick={(e) => e.stopPropagation()}
@@ -160,12 +174,12 @@ export default function CreateBlog() {
             />
           </Col>
 
-          <Form.Label column sm={4} className="mr-6">
-            Please wait for image preview
+          <Form.Label column sm={8} className="mr-6">
+            Please wait for image preview!
           </Form.Label>
         </Form.Group>
 
-        {/* <div className="imagecontainer" style={{display:images.length>0?"flex" :"none"}}> */}
+       
 
         {
         images.length>0 && 
@@ -182,6 +196,7 @@ export default function CreateBlog() {
           </Button>
         </div>
       </Form>
+    </div>
     </div>
   );
 }
