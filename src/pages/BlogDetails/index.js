@@ -16,12 +16,12 @@ export default function BlogDetail() {
   }, [dispatch, id]);
 
   return (
-    <div className="flex flex-col rounded-lg bg-white shadow-lg my-3 mx-20">
-      <div className="flex flex-col m-20 mb-3">
+    <div className="flex flex-col rounded-lg bg-white shadow-lg my-3 mx-20 responsiveMainContainer">
+      <div className="flex flex-col m-20 mb-3 responsiveTextContainer">
         <h1 className="text-gray-1000 text-center mb-10">
           {blogdetail.name_of_place}
         </h1>
-        <p>{blogdetail.description}</p>
+        <p className="responsiveBlogText">{blogdetail.description}</p>
       </div>
 
       <div className="img-container">
