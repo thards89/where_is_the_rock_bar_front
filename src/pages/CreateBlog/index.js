@@ -82,7 +82,7 @@ export default function CreateBlog() {
           className="mb-3"
           controlId="exampleForm.ControlInput1"
         >
-          <Form.Label column sm={3}>
+          <Form.Label column sm={4}>
             Title of the Blog:
           </Form.Label>
           <Col sm={12}>
@@ -116,7 +116,7 @@ export default function CreateBlog() {
           className="mb-3"
           controlId="exampleForm.ControlInput2"
         >
-          <Form.Label column sm={2}>
+          <Form.Label column sm={4}>
             City
           </Form.Label>
           <Col sm={8}>
@@ -133,7 +133,7 @@ export default function CreateBlog() {
           className="mb-3"
           controlId="exampleForm.ControlInput6"
         >
-          <Form.Label column sm={2}>
+          <Form.Label column sm={4}>
             Place
           </Form.Label>
           <Col sm={8}>
@@ -150,7 +150,7 @@ export default function CreateBlog() {
           className="mb-3"
           controlId="exampleForm.ControlInput3"
         >
-          <Form.Label column sm={2}>
+          <Form.Label column sm={4}>
             Visited On
           </Form.Label>
           <Col sm={8}>
@@ -163,10 +163,10 @@ export default function CreateBlog() {
         </Form.Group>
 
         <Form.Group as={Row} controlId="formFile" className="mb-3">
-          <Form.Label column sm={2}>
+          <Form.Label column sm={4}>
             Upload Pictures
           </Form.Label>
-          <Col sm={5}>
+          <Col sm={8}>
             <Form.Control type="file"
               multiple
               onClick={(e) => e.stopPropagation()}
@@ -174,11 +174,8 @@ export default function CreateBlog() {
             />
           </Col>
 
-          <Form.Label column sm={8} className="mr-6">
-            Please wait for image preview!
-          </Form.Label>
         </Form.Group>
-
+        <b>Please wait for the images preview! It may take some minutes! :)</b>
        
 
         {

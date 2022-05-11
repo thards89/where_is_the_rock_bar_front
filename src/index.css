@@ -2,96 +2,880 @@
 @tailwind components;
 @tailwind utilities;
 
-
 .loggedIn {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    align-items: center;
-    font-family: "Helvetica";
-    font-size: 14px;
-
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  font-family: "Helvetica";
+  font-size: 14px;
 }
 
 .homePageCard {
-width: 500px;
-height: 500px;
-
+  width: 500px;
+  height: 500px;
 }
 
 .fontTitle {
-    font-family: 'RocknRoll One', sans-serif;
+  font-family: "RocknRoll One", sans-serif;
 }
 
 .fontText {
-    font-family: 'Montserrat', sans-serif;
- 
+  font-family: "Montserrat", sans-serif;
 }
 
 .navIcon {
-    margin-top: 5px;
-    margin-left: 5px;
+  margin-top: 5px;
+  margin-left: 5px;
 }
 
 .containerSearchPage {
-    background-color: rgb(241 245 249);
-
+  background-color: rgb(241 245 249);
+ 
 }
 
 .titleSearchPage {
-    font-family: 'RocknRoll One', sans-serif;
-    font-size: 30px;
-    text-align: center;
-    padding-top: 60px;
-
+  font-family: "RocknRoll One", sans-serif;
+  font-size: 35px;
+  text-align: center;
+  padding-top: 60px;
 }
 
 .rangeText {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 13px;
-    text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  text-align: center;
 }
 
-.searchBar{
-    width: 50px;
-    height: 20px;
-    padding: 10px;
+.searchBar {
+  width: 50px;
+  height: 20px;
+  padding: 10px;
 }
 
 .ratingText {
-    font-size: 11px;
-    margin-top: 3px;
-    margin-bottom: 20px;
-
+  font-size: 11px;
+  margin-top: 3px;
+  margin-bottom: 20px;
 }
 
 .blogsPageTitle {
-    font-family: 'RocknRoll One', sans-serif;
-    font-size: 35px;
-    text-align: center;
-    padding-top: 30px;
+  font-family: "RocknRoll One", sans-serif;
+  font-size: 35px;
+  text-align: center;
+  padding-top: 30px;
 }
 
-.titleCreateBlog {   
-    font-family: 'RocknRoll One', sans-serif;
-    font-size: 30px;
-    text-align: center;
-    padding-top: 30px;
-    margin-bottom: 2px;
+.titleCreateBlog {
+  font-family: "RocknRoll One", sans-serif;
+  font-size: 30px;
+  text-align: center;
+  padding-top: 30px;
+  margin-bottom: 2px;
 }
 
 .returnButton {
+  display: flex;
+  margin: auto;
+  background-color: black;
+  color: white;
+  justify-content: center;
+  text-align: center;
+  border: 1 2 black;
+  text-decoration: none;
+  width: 100px;
+  border-radius: 10px;
+  padding: 8px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.scrollbar::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  border-radius: 100vh;
+  background: #faf8f8;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background: #fdfdfd;
+  border-radius: 100vh;
+  border: 3px solid #f8f8f6;
+}
+
+.scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #e7e2e6;
+}
+
+.homePageMainTitle {
+  font-family: "RocknRoll One", sans-serif;
+  
+}
+
+.searchBarResponsive{
+  width: 450px;
+  font-size: 12px;
+  margin: auto;
+       
+}
+.selectHomePage{
+    width: 200px;
+    height: 30px;
+    font-size: 15px;
+    margin:auto;
+
+}
+
+
+.responsiveSlider{
+display: flex;
+
+margin:auto;
+}
+
+.rangeText{
+    font-size: 13px;
+    font-weight: 500
+  }
+
+.responsiveSearchButtonHomePapge {
+font-size: 14px;
+font-weight: 900;
+display: flex;
+margin:auto;
+
+}
+
+.responsiveSuggestions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.containerSearchResponsive {
+  display: flex;
+  align-items: center;
+  height: 300px;
+
+  }
+
+
+/* Responsiveness  */
+@media only screen and (max-width: 950px) {
+  .homePageMainTitle {
+    font-size: 30px;
+    padding: 0px;
+    margin-bottom: 1px;
+    font-family: "RocknRoll One", sans-serif;
+  }
+  .homePageMainText {
+    font-size: 23px;
+    margin-top: 1px;
+    padding: 0px;
+    margin-bottom: 1px;
+  }
+  .homePageMainTextContainer {
+    display: absolute;
+    top: 10;
+    left: 10;
+    right: 10;
+    bottom: 10;
+    width: 800px;
+    height: 550px;
+    border-radius: 10px;
+  }
+
+  .buttonResponsiveHomePage {
+    font-size: 14px
+  }
+  .titleSearchPage {
+    font-size: 30px;
+    font-family: "RocknRoll One", sans-serif;
+    
+  }
+  .containerSearchResponsive {
+      display: flex;
+      align-items: center;
+      height: 200px;
+ 
+      }
+  .searchBarResponsive{
+    width: 450px;
+    font-size: 12px;
+         
+  }
+  .selectHomePage{
+      width: 200px;
+      font-size: 12px;
+      margin:auto;
+
+  }
+
+.responsiveImageCard {
+  height: 300px;
+}
+
+.responsiveSlider{
+  display: flex;
+  color: darkblue;
+  margin:auto;
+}
+
+ .rangeText{
+      font-size: 13px;
+      font-weight: 500
+    }
+
+.responsiveSearchButtonHomePapge {
+  font-size: 14px;
+  font-weight: 900;
+  display: flex;
+  margin:auto;
+
+}
+
+
+.responsiveImageCard {
+  height: 200px;
+  padding: 1px;
+  border-radius: 5px;
+}
+
+.responsiveTitleCard {
+  font-size: 15px;
+  font-weight: 900;
+  padding:0px;
+  margin-bottom: 1px;
+}
+
+.ratingText {
+  text-shadow: 5px;
+  margin-bottom: 3px;
+}
+
+.responsiveCardText 
+{
+  font-size: 14px;
+  margin-top: 1px;
+}
+
+.viewBlogsText {
+  font-size: 18px;
+  font-weight: 900;
+  
+ 
+}
+
+.responsivePostedOn {
+  margin-bottom: 20px;
+}
+
+.responsiveBlogButton{
+  margin-top: 1px;
+  font-size: 14px;
+  display: flex;
+}
+
+
+}
+
+@media only screen and (max-width: 750px) {
+  .homePageTitleContainer {
+    margin-top: 4px;
+    margin-bottom: 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .homePageMainTitle {
+    font-size: 25px;
+    padding: 0px;
+    margin-bottom: 2px;
+    margin-top: 15px;
+    font-family: "RocknRoll One", sans-serif;
+  }
+
+  .homePageTextContainer{
+    padding: 1px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2px;
+    margin-bottom: 1px;
+       
+
+  }
+  .homePageMainText {
+    font-size: 18px;
+    margin-top: 0px;
+    padding: 0px;
+    margin-bottom: 0px;
+  }
+  .homePageMainTextContainer {
+    position: absolute;
+    top:400px;
+    left: 1px;
+    right:2px;
+    bottom: 300px;
+    width: 500px;
+    height: 600px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    border-radius: 5px;
+  }
+
+  .buttonResponsiveHomePage {
+    font-size: 13px;
+    margin:auto;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+  }
+  .titleSearchPage {
+    font-size: 30px;
+    font-family: "RocknRoll One", sans-serif;
+
+  }
+  .selectHomePage{
+      width: 200px;
+      font-size: 12px;
+      margin: auto;
+  }
+  .searchBarResponsive{
+    width: 420px;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+      
+  }
+  .containerSearchResponsive {
+  display: flex;
+  align-items: center;
+  height: 300px;
+    }
+
+.responsiveImageCard {
+  height: 300px;
+}
+
+.responsiveSlider{
+  display: flex;
+  margin: auto;
+  color: darkblue;
+}
+
+ .rangeText{
+      font-size: 13px;
+      font-weight: 500
+    }
+
+.responsiveSearchButtonHomePapge {
+  font-size: 14px;
+  font-weight: 900;
+  display: flex;
+  margin:auto;
+  padding: 10px;
+  
+}
+
+
+.responsiveImageCard {
+  height: 200px;
+  padding: 1px;
+  border-radius: 5px;
+}
+
+.responsiveTitleCard {
+  font-size: 15px;
+  font-weight: 900;
+  padding:0px;
+  margin-bottom: 1px;
+}
+
+.ratingText {
+  text-shadow: 5px;
+  margin-bottom: 3px;
+}
+
+.responsiveCardText 
+{
+  font-size: 14px;
+  margin-top: 1px;
+}
+
+.viewBlogsText {
+  font-size: 18px;
+  font-weight: 900;
+  
+ 
+}
+
+.responsivePostedOn {
+  margin-bottom: 3px;
+}
+
+.responsiveBlogButton{
+  margin-top: 1px;
+  font-size: 12px;
+  display: flex;
+}
+
+}
+
+
+
+@media only screen and (max-width: 500px) {
+  .homePageTitleContainer {
+    margin-top: 4px;
+    margin-bottom: 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .homePageMainTitle {
+    font-size: 16px;
+    padding: 0px;
+    margin-bottom: 2px;
+    margin-top: 0px;
+    font-family: "RocknRoll One", sans-serif;
+  }
+
+  .homePageTextContainer{
+    padding: 1px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2px;
+    margin-bottom: 1px;
+       
+
+  }
+  .homePageMainText {
+    font-size: 14px;
+    margin-top: 0px;
+    padding: 0px;
+    margin-bottom: 0px;
+  }
+  .homePageMainTextContainer {
+    position: absolute;
+    top:500px;
+    left: 0px;
+    right:10px;
+    bottom: 520px;
+    width: 500px;
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    border-radius: 5px;
+  }
+
+  .buttonResponsiveHomePage {
+    font-size: 13px;
+    margin:auto;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+  }
+  .titleSearchPage {
+    font-size: 30px;
+    font-family: "RocknRoll One", sans-serif;
+
+  }
+  .selectHomePage{
+      width: 200px;
+      font-size: 12px;
+      margin: auto;
+  }
+  .searchBarResponsive{
+    width: 420px;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+      
+  }
+  .containerSearchResponsive {
+  display: flex;
+  align-items: center;
+  height: 300px;
+    }
+
+.responsiveImageCard {
+  height: 300px;
+}
+
+.responsiveSlider{
+  display: flex;
+  margin: auto;
+  color: darkblue;
+}
+
+ .rangeText{
+      font-size: 13px;
+      font-weight: 500
+    }
+
+.responsiveSearchButtonHomePapge {
+  font-size: 14px;
+  font-weight: 900;
+  display: flex;
+  margin:auto;
+  padding: 10px;
+  
+}
+
+
+.responsiveImageCard {
+  height: 200px;
+  padding: 1px;
+  border-radius: 5px;
+}
+
+.responsiveTitleCard {
+  font-size: 15px;
+  font-weight: 900;
+  padding:0px;
+  margin-bottom: 1px;
+}
+
+.ratingText {
+  text-shadow: 5px;
+  margin-bottom: 3px;
+}
+
+.responsiveCardText 
+{
+  font-size: 14px;
+  margin-top: 1px;
+}
+
+.viewBlogsText {
+  font-size: 18px;
+  font-weight: 900;
+  
+ 
+}
+
+.responsivePostedOn {
+  margin-bottom: 3px;
+}
+
+.responsiveBlogButton{
+  margin-top: 1px;
+  font-size: 12px;
+  display: flex;
+}
+
+
+}
+ 
+
+@media only screen and (max-width: 450px) {
+  .responsiveSearchAreaCtn{
+    margin:2px;
+    height: 200px;
+  } 
+  
+  .homePageTitleContainer {
+    margin-top: 10px;
+    margin-bottom: 1px;
+  }
+  
+  .homePageMainTitle {
+    font-size: 15px;
+    padding: 0px;
+    margin-bottom: 1px;
+    margin-top: 0px;
+    font-family: "RocknRoll One", sans-serif;
+  }
+
+  .homePageTextContainer{
+    padding: 1px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2px;
+    margin-bottom: 1px;
+       
+
+  }
+  .homePageMainText {
+    font-size: 13px;
+    margin-top: 0px;
+    padding: 0px;
+    margin-bottom: 0px;
+  }
+  .homePageMainTextContainer {
+    position: absolute;
+    top:100px;
+    left: 0px;
+    right:10px;
+    bottom: 1px;
+    width: 500px;
+    height: 500px;
+    justify-content: center;
+    border-radius: 5px;
+  }
+
+  .buttonResponsiveHomePage {
+    font-size: 13px;
+    margin-top: 5px;
+  }
+  .titleSearchPage {
+    font-size: 30px;
+    font-family: "RocknRoll One", sans-serif;
+    padding-top: 3px;
+
+  }
+ 
+  .containerSearchResponsive {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0;
+    height: 330px;
+    margin-top: 2px;
+          }
+  .searchBarResponsive{
+    width: 300px;
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+      
+  }
+
+  .responsiveSuggestions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+  }
+
+  .selectHomePage{
+    width: 200px;
+    font-size: 8px;
     display: flex;
     margin:auto;
-    background-color: black;
-    color: white;
-    justify-content: center;
-    text-align: center;
-    border: 1 2 black;
-    text-decoration: none;
+}
+
+.responsiveSlider{
+  display: flex;
+  margin: auto;
+  color: darkblue;
+}
+
+ .rangeText{
+      font-size: 11px;
+      font-weight: 500
+    }
+
+.responsiveSearchButtonHomePapge {
+  font-size: 13px;
+  font-weight: 900;
+  display: flex;
+  margin:auto;
+  padding: 10px;
+  
+}
+
+
+.responsiveImageCard {
+  height: 200px;
+  padding: 1px;
+  border-radius: 5px;
+}
+
+.responsiveTitleCard {
+  font-size: 15px;
+  font-weight: 900;
+  padding:0px;
+  margin-bottom: 1px;
+}
+
+.ratingText {
+  text-shadow: 5px;
+  margin-bottom: 3px;
+}
+
+.responsiveCardText 
+{
+  font-size: 14px;
+  margin-top: 1px;
+}
+
+.viewBlogsText {
+  font-size: 18px;
+  font-weight: 900;
+  
+ 
+}
+
+.responsivePostedOn {
+  margin-bottom: 3px;
+}
+
+.responsiveBlogButton{
+  margin-top: 1px;
+  font-size: 12px;
+  display: flex;
+}
+
+}
+
+@media only screen and (max-width: 400px) {
+  .responsiveSearchAreaCtn{
+    margin:2px;
+    height: 200px;
+  } 
+  .homePageTitleContainer {
+    margin-top: 1px;
+    margin-bottom: 1px;
+  }
+  
+  .homePageMainTitle {
+    font-size: 15px;
+    padding: 0px;
+    margin-bottom: 1px;
+    margin-top: 0px;
+    font-family: "RocknRoll One", sans-serif;
+  }
+
+  .homePageTextContainer{
+    padding: 1px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1px;
+    margin-bottom: 1px;
+       
+
+  }
+  .homePageMainText {
+    font-size: 13px;
+    margin-top: 0px;
+    padding: 0px;
+    margin-bottom: 0px;
+  }
+  .homePageMainTextContainer {
+    position: absolute;
+    top:0px;
+    left: 0px;
+    right:10px;
     width: 100px;
-    border-radius: 10px;
-    padding: 8px;
-    margin-top: 10px;
+    height: 300px;
+    justify-content: center;
+
+  }
+
+  .buttonResponsiveHomePage {
+    display: none
+  }
+  .titleSearchPage {
+    font-size: 20px;
+    font-family: "RocknRoll One", sans-serif;
+    margin-bottom: 2px;
+    padding: 1px;
+
+  }
+  .containerSearchResponsive {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0;
+    
+          }
+  .searchBarResponsive{
+    width: 300px;
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+      
+  }
+
+  .responsiveSuggestions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+  }
+
+  .selectHomePage{
+    width: 200px;
+    font-size: 8px;
+    display: flex;
+    margin:auto;
+}
+
+.responsiveSlider{
+  display: flex;
+  margin: auto;
+  color: darkblue;
+}
+
+ .rangeText{
+      font-size: 11px;
+      font-weight: 500
+    }
+
+.responsiveSearchButtonHomePapge {
+  font-size: 13px;
+  font-weight: 900;
+  display: flex;
+  margin:auto;
+  padding: 10px;
+  
+}
+
+
+.responsiveImageCard {
+  height: 200px;
+  padding: 1px;
+  border-radius: 5px;
+}
+
+.responsiveTitleCard {
+  font-size: 15px;
+  font-weight: 900;
+  padding:0px;
+  margin-bottom: 1px;
+}
+
+.ratingText {
+  text-shadow: 5px;
+  margin-bottom: 3px;
+}
+
+.responsiveCardText 
+{
+  font-size: 14px;
+  margin-top: 1px;
+}
+
+.viewBlogsText {
+  font-size: 18px;
+  font-weight: 900;
+  
+ 
+}
+
+.responsiveBlogButton{
+  margin-top: 1px;
+  font-size: 12px;
+  display: flex;
+}
+
 
 }
