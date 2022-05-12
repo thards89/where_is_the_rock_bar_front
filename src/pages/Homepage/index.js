@@ -235,13 +235,15 @@ export default function Homepage() {
             </button>
             </div>
           </div>
-          {/* results */}
+
+          {/* RESULTS */}
           <div>
+           {homeData && <p id="results" className="results">Results</p>} 
             <div className="flex flex-row justify-center flex-wrap mt-10 rounded gap-5 ">
               {homeData
                 ? homeData.map((data) => {
                     return (
-                      <div id="results" className="flex m-3 ">
+                      <div  className="flex m-3 ">
                         <div className="flex flex-col w-96 h-96 max-w-7xl rounded-lg bg-white shadow-lg overflow-auto scrollbar ">
                           {data.photos?.length ? (
                             data.photos.map((photos) => {
