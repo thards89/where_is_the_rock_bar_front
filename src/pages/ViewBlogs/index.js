@@ -13,11 +13,13 @@ export default function ViewBlogs() {
   const [filteredBlogs, setFilteredBlogs] = useState([]);
 
   const blogs = useSelector(selectAllBlogsWithUserName);
+  console.log("selector", blogs) 
  
  
   useEffect(() => {
     dispatch(fetchAllBlogsWithUserName);
-  }, [dispatch]);
+    setFilteredBlogs(blogs);
+  }, [dispatch, blogs]);
 
   useEffect(() => {
     setFilteredBlogs(blogs);

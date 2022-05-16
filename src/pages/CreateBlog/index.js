@@ -3,6 +3,10 @@ import { Form, Col, Row, Button } from "react-bootstrap";
 import { createBlog } from "../../store/blog/actions";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import {
+  appDoneLoading,
+  
+} from "../../store/appState/actions";
 
 import { useSelector } from "react-redux";
 import { selectUser } from "../../store/user/selectors";
@@ -38,6 +42,8 @@ export default function CreateBlog() {
     setLocation("");
     setPlace("");
     setvisitedOn("dd-mm-jjjj");
+    dispatch(appDoneLoading())
+    dispatch(appDoneLoading())
     navigateBlogs()    
   }
   const uploadImage = async (e) => {

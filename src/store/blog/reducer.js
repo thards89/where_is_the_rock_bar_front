@@ -13,19 +13,20 @@ export default function reducer(state = initialState, action) {
         loading: true,
       };
     }
-    case "blogs/getAllBlogsWithUserName": {
-      console.log("reducer", action);
-      return {
-        ...state,
-        blogsWithUserName: [...action.payload],
-        loading: false,
-      };
-    }
     case BLOG_CREATION_SUCCESS:
       return { ...state, blogs: { ...action.payload } };
 
     case VIEW_BLOG_DETAIL:
       return { ...state, blogDetail: { ...action.payload } };
+      
+    case "blogs/getAllBlogsWithUserName": {
+        console.log("reducer", action);
+        return {
+          ...state,
+          blogsWithUserName: [...action.payload],
+          loading: false,
+        };
+      }
     default:
       return state;
   }
