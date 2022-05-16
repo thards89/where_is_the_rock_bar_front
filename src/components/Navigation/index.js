@@ -120,9 +120,10 @@ const ResponsiveAppBar = () => {
               variant="h6"
               component="div"
               sx={{
-                flexGrow: 2,
+                flexGrow: 1,
                 lineHeight: 1,
                 fontSize: 18,
+                textAlign: "center",
                 display: { xs: "flex", md: "none" },
               }}
             >
