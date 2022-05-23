@@ -18,9 +18,12 @@ export default function BlogDetail() {
   return (
     <div className="flex flex-col rounded-lg bg-white shadow-lg my-3 mx-20 responsiveMainContainer">
       <div className="flex flex-col m-20 mb-3 responsiveTextContainer">
-        <h1 className="text-gray-1000 text-center mb-10">
-          {blogdetail.name_of_place}
+        <h1 className="text-gray-1000 text-center mb-2">
+        {blogdetail.title}
         </h1>
+        <h4 className="text-gray-1000 text-center mb-10">
+        {blogdetail.name_of_place} - {blogdetail.location}
+        </h4>
         <p className="responsiveBlogText">{blogdetail.description}</p>
       </div>
 

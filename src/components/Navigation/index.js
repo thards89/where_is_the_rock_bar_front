@@ -105,9 +105,9 @@ const ResponsiveAppBar = () => {
               <MenuItem onClick={navigateHomePage}>
                 <Typography textAlign="center">Home</Typography>
               </MenuItem>
-              <MenuItem onClick={navigateSeeBlogs}>
+              {/* <MenuItem onClick={navigateSeeBlogs}>
                 <Typography textAlign="center">Blogs</Typography>
-              </MenuItem>
+              </MenuItem> */}
               {token? 
               <MenuItem onClick={navigateREgisterBlog}>
                 <Typography textAlign="center">Create a Blog</Typography>
@@ -130,6 +130,12 @@ const ResponsiveAppBar = () => {
             Where is the Rock Bar{''}{''}
             </Typography>
           </ThemeProvider>
+          <Button
+                onClick={navigateSeeBlogs}
+                sx={{ my: 2, color: "white", display: { xs: "flex", md: "none" } }}
+              >
+              Blogs
+              </Button>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             <Button
               onClick={navigateHomePage}

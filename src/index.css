@@ -169,6 +169,11 @@ margin:auto;
     text-align: center;
   }
 
+  .responsivePostedOn {
+    margin-bottom: 2px;
+  }
+  
+
 /* Responsiveness  */
 @media only screen and (max-width: 950px) {
   .homePageMainTitle {
