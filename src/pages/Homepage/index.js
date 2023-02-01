@@ -13,6 +13,7 @@ import FormGroup from "@mui/material/FormGroup";
 import Box from "@mui/material/Box";
 import Rating from "@mui/material/Rating";
 import Typography from "@mui/material/Typography";
+import { apiKey } from "../../config/constants";
 
 export default function Homepage() {
   const homeData = useSelector(selectHomeData);
@@ -89,7 +90,7 @@ export default function Homepage() {
     const placeType = type;
     dispatch(dataHomepage(lat, lng, radius, placeType));
     e.preventDefault();
-   window.location.replace("/#results")
+    window.location.replace("/#results");
   };
 
   const renderSuggestions = () =>
@@ -135,16 +136,16 @@ export default function Homepage() {
                 </h4>
               </p>
               <button
-              className="bg-slate-200 hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-slate-300 rounded shadow buttonResponsiveHomePage"
-              onClick={(e) => {
-                e.preventDefault();
-                window.location.replace("/#search");
-              }}
-            >
-              <b>Click Here to Start</b>
-            </button>
+                className="bg-slate-200 hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-slate-300 rounded shadow buttonResponsiveHomePage"
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.location.replace("/#search");
+                }}
+              >
+                <b>Click Here to Start</b>
+              </button>
             </div>
-            </div>
+          </div>
         </div>
       </div>
 
@@ -154,8 +155,10 @@ export default function Homepage() {
           <p style={{ margin: "10px", color: "#F1F5F9" }}>.</p>
           <p>Where is the Rock Bar?</p>
         </div>
-        <div className="container h-screen flex align-center items-top flex-column bg-slate-100 
-         containerSearchResponsive">
+        <div
+          className="container h-screen flex align-center items-top flex-column bg-slate-100 
+         containerSearchResponsive"
+        >
           <div ref={ref}>
             <div className="flex align-center justify-around mt-10 gap-3 searchBarResponsive">
               <input
@@ -211,7 +214,7 @@ export default function Homepage() {
                 <option value="Irish Pub">Irish Pub</option>
                 <option value="Rock Restaurant">Rock Restaurant</option>
                 <option value="Music Venue">Music Venue</option>
-                <option value="Coffeeshop">Coffeeshop</option>
+                {/* <option value="Coffeeshop">Coffeeshop</option> */}
               </select>
             </div>
             <div className="flex align-center justify-center flex-column mr-5 ml-5">
@@ -233,82 +236,86 @@ export default function Homepage() {
             >
               Search
             </button>
-            </div>
           </div>
+        </div>
 
-          {/* RESULTS */}
-          <div>
-           {homeData && <p id="results" className="results">Results</p>} 
-            <div className="flex flex-row justify-center flex-wrap mt-10 rounded gap-5 ">
-              {homeData
-                ? homeData.map((data) => {
-                    return (
-                      <div  className="flex m-3 ">
-                        <div className="flex flex-col w-96 h-96 max-w-7xl rounded-lg bg-white shadow-lg overflow-auto scrollbar ">
-                          {data.photos?.length ? (
-                            data.photos.map((photos) => {
-                              return (
-                                <img
-                                  className=" w-full h-96 md:h-44 object-cover md:w-full rounded-xl rounded-br-xl md:rounded-none md:rounded-l-lg responsiveImageCard"
-                                  src={`https://maps.googleapis.com/maps/api/place/photo?photo_reference=${photos.photo_reference}&maxwidth=300&key=AIzaSyDGnhMSdxZWn2pTKvaimAKqZif3PqA7LwY`}
-                                  alt=""
+        {/* RESULTS */}
+        <div>
+          {homeData && (
+            <p id="results" className="results">
+              Results
+            </p>
+          )}
+          <div className="flex flex-row justify-center flex-wrap mt-10 rounded gap-5 ">
+            {homeData
+              ? homeData.map((data) => {
+                  return (
+                    <div className="flex m-3 ">
+                      <div className="flex flex-col w-96 h-96 max-w-7xl rounded-lg bg-white shadow-lg overflow-auto scrollbar ">
+                        {data.photos?.length ? (
+                          data.photos.map((photos) => {
+                            return (
+                              <img
+                                className=" w-full h-96 md:h-44 object-cover md:w-full rounded-xl rounded-br-xl md:rounded-none md:rounded-l-lg responsiveImageCard"
+                                src={`https://maps.googleapis.com/maps/api/place/photo?photo_reference=${photos.photo_reference}&maxwidth=300&key=${apiKey}`}
+                                alt=""
+                              />
+                            );
+                          })
+                        ) : (
+                          <img
+                            className=" w-full h-96 md:h-44 object-cover md:w-full rounded-lg md:rounded-none md:rounded-l-lg responsiveImageCard"
+                            src="https://lijv.nl/wp-content/plugins/ninja-forms/assets/img/no-image-available-icon-6.jpg"
+                            alt=""
+                          />
+                        )}
+
+                        <div className="p-6 flex flex-col justify-start text-clip">
+                          <h5 className="text-gray-900 text-xl font-medium mb-2 responsiveTitleCard">
+                            {data.name}
+                          </h5>
+
+                          <div>
+                            <FormGroup>
+                              <Box
+                                className="responsiveStars"
+                                sx={{ "& > legend": { mt: 2 } }}
+                              >
+                                <Rating
+                                  readOnly
+                                  precision={0.5}
+                                  name="read-only"
+                                  value={data.rating}
                                 />
-                              );
-                            })
-                          ) : (
-                            <img
-                              className=" w-full h-96 md:h-44 object-cover md:w-full rounded-lg md:rounded-none md:rounded-l-lg responsiveImageCard"
-                              src="https://lijv.nl/wp-content/plugins/ninja-forms/assets/img/no-image-available-icon-6.jpg"
-                              alt=""
-                            />
-                          )}
-
-                          <div className="p-6 flex flex-col justify-start text-clip">
-                            <h5 className="text-gray-900 text-xl font-medium mb-2 responsiveTitleCard">
-                              {data.name}
-                            </h5>
-
-                            <div>
-                              <FormGroup>
-                                <Box
-                                  className="responsiveStars"
-                                  sx={{ "& > legend": { mt: 2 } }}
-                                >
-                                  <Rating
-                                    readOnly
-                                    precision={0.5}
-                                    name="read-only"
-                                    value={data.rating}
-                                  />
-                                </Box>
-                              </FormGroup>
-                              <div className="ratingText">
-                                <b>
-                                  {data.rating}/5 stars of {""}
-                                  {""}
-                                  {data.user_ratings_total} users{" "}
-                                </b>
-                              </div>
-
-                              <p className="text-gray-700 text-base mb-3 responsiveCardText">
-                                <b>Adress:</b> {data.vicinity}
-                              </p>
-
-                              <p className="m-0 text-center text-clip overflow-hidden responsiveCardText">
-                                {data.opening_hours?.open_now
-                                  ? "Open now!"
-                                  : "Closed"}
-                              </p>
+                              </Box>
+                            </FormGroup>
+                            <div className="ratingText">
+                              <b>
+                                {data.rating}/5 stars of {""}
+                                {""}
+                                {data.user_ratings_total} users{" "}
+                              </b>
                             </div>
+
+                            <p className="text-gray-700 text-base mb-3 responsiveCardText">
+                              <b>Adress:</b> {data.vicinity}
+                            </p>
+
+                            <p className="m-0 text-center text-clip overflow-hidden responsiveCardText">
+                              {data.opening_hours?.open_now
+                                ? "Open now!"
+                                : "Closed"}
+                            </p>
                           </div>
                         </div>
                       </div>
-                    );
-                  })
-                : ""}
-            </div>
+                    </div>
+                  );
+                })
+              : ""}
           </div>
         </div>
+      </div>
     </div>
   );
 }
