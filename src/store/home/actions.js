@@ -8,7 +8,7 @@ export const getHomeData = (homeData) => ({
 export const dataHomepage = (lat, lng, radius, placeType) => {
   return async (dispatch, getState) => {
     try {
-      const response = await axios.post("https://where-is-the-rock-bar.herokuapp.com/homeData", {
+      const response = await axios.post("https://whereistherockbarback-production.up.railway.app/homeData", {
         lat,
         lng,
         radius,
