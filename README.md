@@ -1,5 +1,5 @@
 # Where is The Rock Bar
-In this website, you can find the rock bars, pubs, metal bars and musical venues close to you and register your experience on them.
+In this website, you can find the rock bars, irish pubs, metal bars, rock restaurants and musical venues next to you and register your experience on them.
 
 ![rockBar-1](https://github.com/thards89/manga-managment-app-front-end/assets/96024390/c700a6d8-91d2-4598-a5c5-b7e1228fda2a)
 
@@ -23,12 +23,11 @@ It uses Google Places Api and it is built with:<br>
  
 ## Table of contents:
 - **[Screenshots](#setup-how-to-use-this-template)**
-![where-is-rock-bar](https://github.com/thards89/manga-managment-app-front-end/assets/96024390/56b30c88-73de-490e-9078-18468f84141f)
-
 - **[Setup](#setup-how-to-use-this-template)**
 - **[Create React App docs](#cra-docs)**
 
 ## Screenshots
+![where-is-rock-bar](https://github.com/thards89/manga-managment-app-front-end/assets/96024390/56b30c88-73de-490e-9078-18468f84141f)
 
 ## SETUP How to check this project
 
