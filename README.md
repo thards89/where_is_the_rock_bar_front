@@ -1,7 +1,7 @@
 # Where is The Rock Bar
 In this website, you can find the rock bars, pubs, metal bars and musical venues close to you and register your experience on them.
 
-![rockBar-1](https://github.com/thards89/manga-managment-app-front-end/assets/96024390/61670df6-73c6-4a04-a5e8-e40bba1f02ee)
+![rockBar-1](https://github.com/thards89/manga-managment-app-front-end/assets/96024390/c700a6d8-91d2-4598-a5c5-b7e1228fda2a)
 
 It uses Google Places Api and it is built with:<br>
 <br> 
@@ -23,14 +23,16 @@ It uses Google Places Api and it is built with:<br>
  
 ## Table of contents:
 - **[Screenshots](#setup-how-to-use-this-template)**
+![where-is-rock-bar](https://github.com/thards89/manga-managment-app-front-end/assets/96024390/56b30c88-73de-490e-9078-18468f84141f)
+
 - **[Setup](#setup-how-to-use-this-template)**
 - **[Create React App docs](#cra-docs)**
 
 ## Screenshots
 
-## SETUP How to use this template
+## SETUP How to check this project
 
-1. Create a new project based on this template using the `Use this template` button
+1. Create a new project based on this template using the `Use this template` button (optional)
 
 ![HOW_TO_USE](https://user-images.githubusercontent.com/20372832/77003323-70966180-695d-11ea-8abe-b362d57135f3.gif)
 
