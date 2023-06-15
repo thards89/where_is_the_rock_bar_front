@@ -82,7 +82,7 @@ export default function ViewBlogs() {
                     <p className="responsivePostedOn text-gray-700 text-sm"><b>Posted on:</b>&nbsp;{moment(blogs.createdAt).format("DD-MM-YYYY")} </p>
                     <NavLink to={`/blogs/viewblog/${blog.id}`}>
                       <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded responsiveBlogButton">
-                        Know Experience
+                        Details
                       </button>
                     </NavLink>
                   </div>

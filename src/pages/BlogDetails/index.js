@@ -26,7 +26,6 @@ export default function BlogDetail() {
         </h4>
         <p className="responsiveBlogText">{blogdetail.description}</p>
       </div>
-
       <div className="img-container">
       {!blogdetail
           ? "Loading" :

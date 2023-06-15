@@ -34,13 +34,36 @@
  
 }
 
+.searchSection-align {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+
+}
+
 .titleSearchPage {
   font-family: "RocknRoll One", sans-serif;
   font-size: 35px;
   text-align: center;
-  padding-top: 60px;
+  margin-top: 60px;
 }
 
+.inputContainer{
+  margin: auto;
+  padding-bottom: 1rem;
+}
+
+.inputField{
+  margin: auto;
+  width: 50vh;
+  border: 1px solid rgb(222, 226, 230);
+  border-radius: 3px;
+  text-align: center;
+}
+
+.selectField{
+  width: 25vh !important
+}
 .rangeText {
   font-family: "Montserrat", sans-serif;
   font-size: 13px;
@@ -132,7 +155,6 @@
 
 .responsiveSlider{
 display: flex;
-
 margin:auto;
 }
 
@@ -153,7 +175,7 @@ margin:auto;
   display: flex;
   align-items: center;
   justify-content: center;
-
+  flex-flow: column wrap;
 }
 
 .containerSearchResponsive {
@@ -164,9 +186,10 @@ margin:auto;
   }
 
   .results {
-    font-size: 20px;
+    font-size: 30px;
     font-family: "RocknRoll One", sans-serif;
     text-align: center;
+    margin-top: 30px;
   }
 
   .responsivePostedOn {
